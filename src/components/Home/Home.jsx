@@ -201,7 +201,7 @@ export const Home = () => {
   }, [selectorCategoriesData]);
   return (
     <React.Fragment>
-      <Landing />
+      {/* <Landing /> */}
       <Row>
         <Col lg="12" className="colHome">
           <Row>

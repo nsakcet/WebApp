@@ -128,7 +128,7 @@ export const HomeCommon = () => {
   }, [params.Category2]);
   return (
     <React.Fragment>
-      <Landing />
+      {/* <Landing /> */}
       <Row>
         {params.Category1 ? (
           <React.Fragment>

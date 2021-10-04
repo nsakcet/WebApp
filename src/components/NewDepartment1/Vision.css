@@ -1,0 +1,16 @@
+.Article-tital{
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    top: 6%;
+    font-size: 19px;
+    background-color: #f1f1f1;
+    width: 60%;
+    height: 50%;
+   
+}
+.entry-content {
+    
+    margin: 30px;
+
+}

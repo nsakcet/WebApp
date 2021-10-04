@@ -22,7 +22,7 @@ function App() {
     <div style={{ zoom: "85%" }}>
       <Provider store={store}>
         <Router>
-          {/* <Landing /> */}
+          <Landing />
           <Routes />
           <Footer />
         </Router>

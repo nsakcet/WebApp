@@ -176,7 +176,36 @@ const NavDynamicMenu = () => {
               >
                 Home
               </Link>
+              
             )}
+            <Link 
+                 className="nav-element dropdown"
+              // className={`nav-element dropdown${
+              //       Department1 == params.Category1
+              //         ? " activeSuperTabs"
+              //         : ""
+              //     }`}
+                 >Department1
+              <div class="dropdown-content">
+                <ul className="sub-menu">
+                <li><Link to="/cse">COMPUTER SCIENCE ENGINEERING</Link></li>
+                 <li><Link to="/mech">MECHANICAL ENGINEERING</Link></li>
+                   <li><Link to="/s&h">SCIENCE-AND-HUMANITIES</Link></li>
+                </ul>
+                 <ul className="sub-menu">
+               <li> <Link to="/it">INFORMATION TECHINOLOGY</Link></li>
+
+
+               <li> <Link to="/e&c">ELECTRONICS AND COMMUNICATION ENGINEERING</Link></li>
+                <li><Link to="/mba">MASTER OF BUSINESS ADMINISTRATION</Link></li>
+                </ul>
+                <ul className="sub-menu">
+               <li> <Link to="/civil">CIVIl Engineering</Link></li>
+               <li> <Link to="/eee">ELECTRICAL AND ELECTRONICS ENGINEERING</Link></li>
+               <li> <Link to="/pe">PETROLEUM ENGINEERING</Link></li>
+              </ul>
+              </div>
+              </Link>
             {superMenuData.map((menu) => {
               return (
                 <Link

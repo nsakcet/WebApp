@@ -1,0 +1,27 @@
+.head-top{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+ 
+}
+.m-div{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+ 
+}
+.head-top h1{
+      font-size: 40px;
+}
+div .Article-tital{
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    top: 40%;
+    font-size: 19px;
+    background-color: #f1f1f1;
+    width: 60%;
+    height: 50%;
+   
+}
+
