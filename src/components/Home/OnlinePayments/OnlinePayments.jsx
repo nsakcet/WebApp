@@ -28,6 +28,18 @@ export const OnlinePayments = () => {
           {`Bonafide and Exam Fee`}
         </a>
       </Row>
+
+      <br />
+      <br />
+      <Row>
+        <a
+          href={`https://exams.sbtet.telangana.gov.in/index.html#/Dashboard`}
+          className="prof-title slider-overlay-carousel"
+          target="_blank"
+        >
+          {`Diploma Exam Fee`}
+        </a>
+      </Row>
     </React.Fragment>
   );
 };

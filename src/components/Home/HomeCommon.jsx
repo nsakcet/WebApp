@@ -17,6 +17,8 @@ import {
   getSelectedCategory,
   getAllCategories,
   getRedirectLandingHome,
+  getSelectedCategoryLevel3,
+  getSelectedCategoryLevel2,
 } from "../../state/selectors/categories";
 import {
   setSelectedCategory,
@@ -30,6 +32,9 @@ import { getComponentElement } from "./ControllerComps";
 
 export const HomeCommon = () => {
   const selectorCategory = useSelector(getSelectedCategory);
+  const selectorCategoryLevel2 = useSelector(getSelectedCategoryLevel2);
+  const selectorCategoryLevel3 = useSelector(getSelectedCategoryLevel3);
+
   const selectorCategoriesData = useSelector(getAllCategories);
   const params = QueryString.parse(useLocation().search);
   const dispatch = useDispatch();
@@ -114,6 +119,11 @@ export const HomeCommon = () => {
       dispatch(setVideosData([...data]));
     }
   };
+
+  useEffect(() => {
+   console.log('Here coming 22   &&&& : ', selectorCategory, selectorCategoryLevel2, selectorCategoryLevel3)
+  }, [selectorCategory, selectorCategoryLevel2, selectorCategoryLevel3])
+  
   useEffect(() => {
     setSelectedCategoryData(params.Category1);
     dispatch(setSelectedCategory(params.Category1));
@@ -125,12 +135,12 @@ export const HomeCommon = () => {
     els2 && els2.click();
     const els3 = document.getElementById(params.Category3);
     els3 && els3.click();
-  }, [params.Category2]);
+  }, []);
   return (
     <React.Fragment>
       <Landing />
       <Row>
-        {params.Category1 ? (
+        {params.Category1 || selectorCategory ? (
           <React.Fragment>
             <Col lg="2">
               <div>

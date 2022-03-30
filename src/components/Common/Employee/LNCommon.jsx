@@ -38,7 +38,7 @@ function CustomToggle({ children, eventKey, handleClick }) {
 export const LNCommon = () => {
   const [activeKey, setActiveKey] = useState(0);
   const [activeKey2, setActiveKey2] = useState(0);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [level3, setLevel3] = useState();
   const selector = useSelector(getAllCategories);
   const params = QueryString.parse(useLocation().search);
@@ -53,13 +53,13 @@ export const LNCommon = () => {
       (cat) => cat.ParentId == params.Category1
     );
     setData(filterCategoriesData);
-  }, [params.Category1]);
+  }, [params.Category1, selector]);
 
   return (
     <div className="App">
       <Accordion activeKey={activeKey} className="Accordion2">
-        {data &&
-          data.map((item, index) => (
+        {
+          data?.map((item, index) => (
             <Card key={index} className="card2">
               <CustomToggle
                 as={Card.Header}
@@ -80,10 +80,7 @@ export const LNCommon = () => {
                 ) : (
                   <span className="sidebar-pn">{(index !== 0) ? '+':'-'}</span>
                 ) 
-                }
-
-                 
-                
+                } 
               </CustomToggle>
               <Accordion.Collapse  eventKey={index} id="collapse2"  >
                 <React.Fragment>

@@ -85,16 +85,17 @@ const NavDynamicMenu = () => {
   };
   const setMultipleFilesAll = async () => {
     const resultImages = await setMultipleFiles("IMG");
-    resultImages !== undefined &&
-      dispatch(setImagesData([...resultImages.data]));
+    resultImages?.data &&
+      dispatch(setImagesData([...resultImages?.data]));
     const resultPDFs = await setMultipleFiles("PDF");
-    resultPDFs !== undefined && dispatch(setPDFsData([...resultPDFs.data]));
+    console.log('pdf data from api :', resultPDFs)
+    resultPDFs?.data && dispatch(setPDFsData([...resultPDFs?.data]));
     const resultPPTs = await setMultipleFiles("PPT");
-    resultPPTs !== undefined && dispatch(setPPTsData([...resultPPTs.data]));
+    resultPPTs?.data  && dispatch(setPPTsData([...resultPPTs?.data]));
     const resultDOCs = await setMultipleFiles("DOC");
-    resultDOCs !== undefined && dispatch(setDOCsData([...resultDOCs.data]));
+    resultDOCs?.data && dispatch(setDOCsData([...resultDOCs?.data]));
     const resultXLSs = await setMultipleFiles("XLS");
-    resultXLSs !== undefined && dispatch(setXLSsData([...resultXLSs.data]));
+    resultXLSs?.data && dispatch(setXLSsData([...resultXLSs?.data]));
     getHomeLevelDetailsUI();
   };
   const setVideoFilesAll = async () => {
@@ -137,13 +138,20 @@ const NavDynamicMenu = () => {
   };
   useEffect(() => {
     getHomeLevelDetailsUI();
-    setMultipleFilesAll();
     setVideoFilesAll();
+    setMultipleFilesAll()
     setEventsAffairsFilesAll();
-  }, [selectedCategory3]);
+  }, [selectedCategory3, selectedCategory2]);
+
+  useEffect(() => {
+    // setMultipleFilesAll();
+  }, [])
+  
+
   useEffect(() => {
     getMenus();
   }, [selectedCategory3]);
+
   return (
     <React.Fragment>
       <Navbar

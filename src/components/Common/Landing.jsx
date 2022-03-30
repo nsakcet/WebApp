@@ -36,7 +36,7 @@ export const Landing = () => {
   };
   const serviceDataCall = async () => {
     const resultGender = await getGenderMaster();
-    dispatch(setGenders(resultGender.data[0]));
+    dispatch(setGenders(resultGender?.data[0]));
   };
   useEffect(() => {
     serviceDataCall();

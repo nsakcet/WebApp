@@ -124,7 +124,7 @@ export const EmployeeOverview = () => {
                   Highest Qualification:
                 </Col>
                 <Col lg="9" className="data-col">
-                  {selectedEmployee.FirstName}
+                  {selectedEmployee.highestQualification}
                 </Col>
               </Row>
 
@@ -133,7 +133,7 @@ export const EmployeeOverview = () => {
                   Other Qualification:
                 </Col>
                 <Col lg="9" className="data-col">
-                  {selectedEmployee.FirstName}
+                  {selectedEmployee.otherQualification}
                 </Col>
               </Row>
 

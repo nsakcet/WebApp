@@ -1,9 +1,18 @@
 const categoriesReducerDefaultState = {
   data: [],
+  selectPdfData: [],
   name: "",
 };
 
-const categoriesReducer = (state = categoriesReducerDefaultState, action) => {
+const categoriesReducer = (
+  state = {
+    data: [],
+    selectPdfData: [],
+    name: "",
+  },
+  action
+) => {
+  // console.log("redcucer called : ", action);
   switch (action.type) {
     case "SET_CATEGORIES":
       return {
@@ -48,7 +57,7 @@ const categoriesReducer = (state = categoriesReducerDefaultState, action) => {
     case "SET_PDF_DATA":
       return {
         ...state,
-        selectPdfData: action.data,
+        selectPdfData: [...action.data],
       };
     case "SET_DOC_DATA":
       return {
